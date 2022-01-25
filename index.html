@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel = "icon" href = "icons/brackets.png" type="images/x-icon">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	</head>
+
+	<body onload="myFuntion()">
+
+	<nav>
+		<a class="logo" href="index.html"><img src="icons/logo.png" width="32" height="32" style="margin: 20px" class="logo-img"></a>
+		<ul>
+			<li><a id="github" href="https://github.com/StinkyKronos" target="_blank" rel="noopener noreferrer"><img src="icons/GitHub.png" width="32" height="32"></a></li>
+			<li><a id="instagram" href="https://www.instagram.com/_stinkykronos_/", target="_blank" rel="noopener noreferrer"><img src="icons/instagram.png" width="32" height="32"></a></li>
+			<li><a id="linkedin" href="https://www.linkedin.com/in/hemanth-jayan-776a86227/" target="_blank" rel="noopener noreferrer"><img src="icons/Linkedin.png" width="32" height="32"></a></li>
+		</ul>
+	</nav>
+	
+	<div class="loader-wrapper" id="loader">
+		<div class="loader"></div>
+	</div>
+
+	<body>
+		<section class="home">
+			<div class="home-content">
+				<div class="intro">Hey,</div>
+				<div class="name">I'm Hemanth</div>
+				<div class="bio">I'm a <span class="animate"></span></div>
+				<script>
+					var typed = new Typed('.animate', {
+						strings: ["Web Developer.", "Student.", "Programmer.", ],
+						typeSpeed: 80,
+						backSpeed: 60,
+						shuffle: true,
+						loop: true
+					});
+				</script>
+				<button id="about-btn">About Me</button>
+				<button id="contact-btn">Contact Me</button>
+				<!-- button onlick funtion -->
+
+				<script>
+					document.getElementById("about-btn").onclick = function () {
+						window.location.href="#about-me";
+					};
+					document.getElementById("contact-btn").onclick = function () {
+						window.location.href="mailto:not.at.all.hemanth@gmail.com";
+					};
+				</script>
+			</div>
+		</section>
+
+		<!-- about me section -->
+		<section class="about-me" id="about-me">
+			<div class="max-width">
+				<div class="about-me-text">
+					<h2>—About Me—</h2>
+					<p>I'm a self-taught developer from India. I started my journey as a developer in the year 2020. I have a passion for learning new <a href="#skills-section">skills</a> and I'm always trying to improve my skills. I'm looking forward to working with you.</p>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- projects section -->
+		<section class="projects">
+			<h2>—Projects—</h2>
+			<div class="container">
+				<a href="https://murali-krishna.netlify.app/" target="_blank" class="link">
+					<div class="box">
+						<div class="icon"><img src="https://img.icons8.com/ios-glyphs/64/ffffff/portfolio.png" width="64" height="64"></div>
+						<h3>Murali Krishna</h3>
+						<p>Portfolio I made for a 3d Artist</p>
+					</div>
+				</a>
+				<a href="https://stinkykronos.github.io/JS-Calculator/" target="_blank" class="link">
+					<div class="box">
+						<div class="icon"><img src="icons/quiz.png" width="64" height="64"></div>
+						<h3>Simple Calculator</h3>
+						<p>A Calculator what else to say.</p>
+					</div>
+				</a>
+				<a href="pages/comingSoon.html" target="_blank" class="link">
+					<div class="box">
+						<div class="icon"><img src="icons/weather.png" width="64" height="64"></div>
+						<h3>Weather App</h3>
+						<p>Weather app made using JavaScript</p>
+					</div>
+				</a>
+			</div>
+		</section>
+
+
+		<!-- skills section -->
+		<section class="skills" id="skills-section">
+			<div class="max-width">
+				<h1 class="title">—My Skills—</h1>
+				<div class="skills-content">
+					<div class="bars">
+						<div class="info">
+							<span>HTML/CSS</span>
+							<span>70%</span>
+						</div>
+						<div class="line htmlcss"></div>
+					</div>
+					<div class="bars">
+						<div class="info">
+							<span>JavaScript</span>
+							<span>30%</span>
+						</div>
+						<div class="line js"></div>
+					</div>
+					<div class="bars">
+						<div class="info">
+							<span>C#</span>
+							<span>60%</span>
+						</div>
+						<div class="line cs"></div>
+					</div>
+					<div class="bars">
+						<div class="info">
+							<span>Python</span>
+							<span>90%</span>
+						</div>
+						<div class="line py"></div>
+					</div>
+				</div>
+			</div>	
+		</section>
+
+		
+
+		<!-- Loader Start-Script-->
+		<script>
+			var preloader = document.getElementById('loader');
+			function myFuntion(){
+				preloader.style.display = 'none';
+			}
+		</script>
+	</body>
+
+	<footer>
+		<div class="footer">Created By Me | © 2020 All Rights Reserved</div>
+	</footer>
+
+</html>
