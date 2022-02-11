@@ -1,329 +1,240 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Mono&display=swap');
-
-* {  
-    overflow-x: hidden;
+@font-face {
+    font-family: 'Shkoder Light';
+    src: url(Fonts/Shkoder\ 1989\ Light.otf);
 }
 
-body {
-    color: white;
-    background-position-y: 80px;
+@font-face {
+    font-family: 'Shkoder Black';
+    src: url(Fonts/Shkoder\ 1989\ Black.otf);
+}
+
+*{
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
-
-.loader-wrapper{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    position: fixed;
-    background: #181a1b;
-}
-.loader{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background-image: url("images/loader.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.8;
+body{
+    overflow-x: hidden;
+    scroll-snap-align: start;
 }
 
-/* =============== Navigation Bar =================*/
-nav {
-    background: transparent;
+
+nav{
     height: 80px;
     width: 100%;
-    z-index: 1;
-    position: absolute;
+    background-color: transparent;
+    position: fixed;
+    z-index: 10;
 }
 
-nav ul{
-    float: right;
-}
-
-nav .logo-img{
-    transition: 200ms;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-top: 7px;
-    margin-right: 40px;
-    transition: 200ms;
-
-}
-
-nav ul li:hover{
-    transform: scale(1.2);
-}
-
-.logo :hover{
-    transform: scale(1.2);
-}
-
-/* =============== Home  =================*/
-
-.home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.nav-container{
+    margin: 20px 40px;
     position: relative;
-    width: 100vw;
+}
+
+.nav-logo{
+    height: 36px;
+}
+
+#logo{
+    height: 100%;
+    transition: transform 100ms;
+}
+
+#logo:hover{
+    transform: scale(1.1);
+}
+
+.links{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.links ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.links li{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.links li:last-child{
+    margin-right: 0px;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Shkoder Black';
+    position: relative;
+}
+
+.links a::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: scale 250ms ease-in-out;
+    bottom: -5px;
+    scale: 0;
+}
+
+.links a:hover::before{
+    scale: 1;
+}
+
+.overlay-socials{
     height: 100vh;
-    background-image: url(images/BG.jpg);
-    background-attachment: fixed;
+    width: 100vw;
+    position: fixed;
+}
+
+.overlay-socials ul{
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    list-style-type: none;
+}
+
+.overlay-socials .line-dot{
+    display: block;
+    width: 3px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.overlay-socials .line-dot::before{
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.overlay-socials li{
+    margin-top: 25px;
+    transition: 250ms;
+}
+
+.overlay-socials li:hover{
+    transform: translateY(-5px);
+}
+
+.home{
+    background-image: url(images/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-}
-
-.intro{
-    font-size: 48px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-    text-shadow: black 5px 5px 5px;
+    height: 100vh;
+    scroll-snap-type: mandatory;
     position: relative;
-}
-
-.name {
-    font-size: 60px;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    text-shadow: black 5px 5px 5px;
-    position: relative;
-}
-
-.bio {
-    position: relative;
-    font-size: 32px;
-    margin-left: 50px;
-    margin-bottom: 30px;
-    text-shadow: black 5px 5px 5px;
-}
-
-button {
-    background-color: transparent;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    padding: 10px 30px;
-    font-size: 15px;
-    margin-left: 50px;
-    box-shadow: 10px 10px 10px black;
-    transition: .5s;
-}
-
-
-@media (max-width: 800px){
-    .name, .intro, .bio, button{
-        margin-left: 25px;
-    }
-    .name{
-        font-size: 40px;
-    }
-    .intro{
-        font-size: 30px;
-    }
-    .bio{
-        font-size: 20px;
-    }
-    button{
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-}
-
-#about-btn{
-    margin-right: -30px;
-}
-
-#contact-btn {
-    margin: 10px 0px 0px 50px;
-}
-
-button:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
-}
-
-/* =============== About Me =================*/
-.about-me{
-    background-color: white;
-}
-
-.about-me .max-width{
-    padding: 100px 0px;
-    min-width: 300px;
-    max-width: 50%;
-    margin: auto;
-    text-align: center;
-    color: black;
-}
-
-.about-me h2 {
-    font-size: 38px;
-}
-
-.about-me p {
-    font-size: 28px;
-}
-@media (max-width: 800px){
-    .about-me h2 {
-        font-size: 30px;
-    }
-    .about-me p {
-        font-size: 20px;
-    }
-}
-
-fieldset {
-    border: 4px solid #000;
-}
-
-/* =============== Projects =================*/
-
-.projects{
-    padding: 20px;
-    padding-bottom: 100px;
-    background-image: url("images/BG-projects.jpg");
     background-attachment: fixed;
-    background-size: cover;
+
 }
-
-
-.projects h2{
-    font-size: 38px;
-    text-align: center;
-}
-
-.container {
+.flex-container{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
-.container .box{
-    overflow: hidden;
+.home .flex-container h1{
+    font-family: 'Shkoder Light';
+    color: white;
+    font-size: 100px;
     position: relative;
-    height: 250px;
-    width: 350px;
-    padding: 40px;
-    box-shadow: 0px 0px 10px white;
-    margin: 20px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-align: center;
-    transition: 500ms;
-    background: rgba(1, 1, 1, 0.5);
-}
-@media (max-width: 800px) {
-    .container .box{
-        width: 300px;
-    }
+    font-weight: 400px;
 }
 
-.container .box:hover{
-    box-shadow: 0px 0px 20px white;
-    transform: scale(1.02);
-    transform: translateY(-5px);
-    background: rgba(1, 1, 1, 0.8);
+.home .flex-container h1::before{
+    content: "MY NAME IS";
+    font-size: 30px;
+    position: absolute;
+    top: -10px;
+    left: 40px;
 }
 
-.link{
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ================ Skills ==================*/
-
-.skills {
-    padding-top: 80px;
-    padding-bottom: 100px;
-    font-size: 18px;
-    color: black;
+.home .flex-container h1::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 27px;
+    height: 3px;
     background-color: white;
 }
 
-.max-width{
-    max-width: 930px;
-    padding: 0 20%;
-    margin: auto;
+.home .scroll{
+    border-radius: 50px;
+    position: absolute;
+    display: block;
+    height: 40px;
+    width: 20px;
+    border: 1px white solid;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.skills h1{
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 38px;
+.home .scroll::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: up-and-down;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
 
-@media (max-width: 800px){
-    .skills h1{
-        font-size: 36px;
+@keyframes up-and-down{
+    0%{
+        opacity: 0;
+        top: 5px;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        top: 25px
     }
 }
 
-.skills .skills-content .bars{
-    margin-bottom: 20px;
-    padding: 5px;
-}
-
-.skills .skills-content .info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.skills .skills-content .line{
-    width: 100%;
-    height: 5px;
-    background: transparent;
-    position: relative;
-    border: solid 1px black;
-    box-shadow: black 0px 0px 5px;
-    border-radius: 10px;
-}
-
-.skills .skills-content .bars .line::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: black;
-    
-}
-.skills .skills-content .htmlcss::before{
-    width: 70%;
-}
-.skills-content .js::before{
-    width: 30%;
-}
-.skills-content .cs::before{
-    width: 60%;
-}
-.skills-content .py::before{
-    width: 90%;
-}
 
 
-/*================== Footer ==================*/
 
-footer {
-    bottom: 0;
-    background-color: black;
-    position: relative;
-}
 
-.footer{
-    display: flex;
-    justify-content: center;
-}
+
+
+
+
+
+
+
+
+
