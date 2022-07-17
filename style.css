@@ -18,251 +18,30 @@
     padding: 0;
 }
 
-body{
-    overflow-x: hidden;
-    scroll-snap-type: y proximity;
-}
-
-
-nav{
-    height: 80px;
-    width: 100%;
-    background-color: transparent;
-    position: fixed;
-    z-index: 10;
-}
-
-.nav-container{
-    margin: 20px 40px;
-    position: relative;
-}
-
-.nav-logo{
-    height: 36px;
-}
-
-#logo{
-    height: 100%;
-    transition: transform 100ms;
-}
-
-#logo:hover{
-    transform: scale(1.1);
-}
-
-.links{
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.links ul{
-    list-style-type: none;
-    overflow: hidden;
-}
-
-.links li{
-    float: left;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.links li:last-child{
-    margin-right: 0px;
-}
-
-.links a{
-    text-decoration: none;
-    color: white;
-    font-family: 'Shkoder Black';
-    position: relative;
-}
-
-.links a::before{
-    position: absolute;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    transition: transform 250ms ease-in-out;
-    bottom: -5px;
-    transform: scaleX(0);
-}
-
-.links a:hover::before{
-    transform: scaleX(1);
-}
-
-.overlay-socials{
+.main{
     height: 100vh;
     width: 100vw;
-    position: fixed;
-    z-index: 8;
-}
-
-.overlay-socials ul{
-    position: absolute;
-    bottom: 40px;
-    right: 20px;
-    list-style-type: none;
-}
-
-.overlay-socials .line-dot{
-    display: block;
-    width: 3px;
-    height: 50px;
-    background-color: white;
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.overlay-socials .line-dot::before{
-    content: '';
-    display: block;
-    width: 3px;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.overlay-socials li{
-    margin-top: 25px;
-    transition: 250ms;
-}
-
-.overlay-socials li:hover{
-    transform: translateY(-5px);
-}
-
-.home{
-    background-image: url(images/Background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    scroll-snap-align: start;
-    position: relative;
-    background-attachment: fixed;
-
-}
-.flex-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    font-family: REVOLUTION;
+    animation: strobe infinite 100ms;
 }
 
-.home .flex-container h1{
-    font-family: 'Shkoder Light';
-    color: white;
-    font-size: 100px;
-    position: relative;
-    font-weight: 400px;
-}
-
-.home .flex-container h1::before{
-    content: "MY NAME IS";
-    font-size: 30px;
-    position: absolute;
-    top: -10px;
-    left: 40px;
-}
-
-.home .flex-container h1::after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 0px;
-    width: 27px;
-    height: 3px;
-    background-color: white;
-}
-
-.home .scroll{
-    border-radius: 50px;
-    position: absolute;
-    display: block;
-    height: 40px;
-    width: 20px;
-    border: 1px white solid;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.home .scroll::before{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: white;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-name: up-and-down;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
-}
-
-@keyframes up-and-down{
-    0%{
-        opacity: 0;
-        top: 5px;
+@keyframes strobe {
+    0% {
+        color: white;
+        background-color: red;
     }
-    50%{
-        opacity: 1;
+    50% {
+        color: red;
+        background-color: white;
     }
-    100%{
-        opacity: 0;
-        top: 25px
+    100% {
+        color: white;
+        background-color: black;
     }
 }
-
-.about-me{
-    scroll-snap-align: start;
-    background-color: black;
-    background-attachment: fixed;
-    font-family: 'REVOLUTION';
-}
-
-.about-me .first{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-me .first h1{
-    color: white;
-    font-size: 80px;
-}
-
-.about-me .second{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-me .second h1{
-    color: white;
-    font-size: 50px;
-    text-align: center;
-} 
-
 
 
 
